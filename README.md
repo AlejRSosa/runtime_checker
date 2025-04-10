@@ -1,4 +1,4 @@
-# Runtime Checker
+# ⌛ Runtime Checker
 Runtime checker (for EpiGastroDRG purposes only)
 
 This is a simple **Streamlit web app** that helps you estimate how long your `nf-core/methylseq` or `nf-core/rnaseq` analysis might take when running on the RCSI's HPC cluster managed by SLURM. It is designed to assist in planning and communicating expected runtimes, especially useful when submitting long jobs or coordinating reserved cluster time.

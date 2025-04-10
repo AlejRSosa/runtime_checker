@@ -1,0 +1,93 @@
+# ==================================
+# General Python ignores
+# ==================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.swp
+*.log
+*.tmp
+*.bak
+*.orig
+*.DS_Store
+*.egg-info/
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+
+# Conda environment files (optional)
+*.conda
+*.lock
+
+# ==================================
+# Streamlit
+# ==================================
+.streamlit/config.toml
+# Comment out the next line if you want to commit secrets:
+.streamlit/secrets.toml
+
+# ==================================
+# HPC job-related (optional additions)
+# ==================================
+*.out
+*.err
+*.e*
+*.o*
+slurm-*.out
+slurm-*.err
+nohup.out
+
+# ==================================
+# nf-core / Nextflow / Singularity
+# ==================================
+.work/
+.results/
+nextflow.config
+.nextflow*
+.singularity/
+.cache/
+bin/
+output/
+nfcore_*/  # your own pipeline environment
+*.nf.cache
+*.nf.test
+*.dot
+
+# Containers
+*.img
+*.sif
+*.sing
+*.tar.gz
+
+# Cluster temp
+tmp/
+temp/
+scratch/
+
+# ==================================
+# Misc
+# ==================================
+*.zip
+*.tar
+*.gz
+*.bz2
+*.7z
+
+# Ignore large data files (optional)
+*.fastq
+*.fq
+*.bam
+*.vcf
+*.fasta
+*.tsv
+*.csv

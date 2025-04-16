@@ -5,7 +5,7 @@ def estimate_runtime(pipeline, samples, fastq_size_gb, cpus, memory_gb, aligner)
     # Base time estimates per sample (in minutes) under optimal conditions (on 16 cores)
     base_times = {
         "methylseq": {
-            "bismark": 90,  # conservative average per sample
+            "bismark": 90,  # average per sample
             "bwameth": 70
         },
         "rnaseq": {
@@ -15,12 +15,12 @@ def estimate_runtime(pipeline, samples, fastq_size_gb, cpus, memory_gb, aligner)
     }
 
     baseline_cpu = 16
-    baseline_memory = 64  # GB
+    baseline_memory = 64  # in GB
 
     time_per_sample = base_times[pipeline][aligner]
     cpu_factor = baseline_cpu / cpus if cpus > 0 else 1
     mem_factor = max(1.0, baseline_memory / memory_gb)
-    size_factor = 1.0 + (fastq_size_gb - 3) * 0.1  # 3 GB as average reference size
+    size_factor = 1.0 + (fastq_size_gb - 3) * 0.1  
 
     estimated_time_per_sample = time_per_sample * cpu_factor * mem_factor * size_factor
     total_runtime = estimated_time_per_sample * samples / (cpus / 4)  # assume 4 samples in parallel for 16 CPUs

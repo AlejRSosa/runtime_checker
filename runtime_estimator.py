@@ -43,9 +43,10 @@ if st.button("Estimate Runtime"):
     per_sample, total = estimate_runtime(pipeline, samples, fastq_size, cpus, memory, aligner)
 
     st.success(f"\nEstimated runtime per sample: {per_sample:.1f} minutes")
-    hours, minutes = divmod(total, 60)
-    days=divmod(total,24)
-    st.info(f"\nEstimated total job runtime: {int(days)},{int(hours)} hours and {int(minutes)} minutes")
+    total_minutes=total
+    days, reminder_hours=divmod(total_minutes, 60*24)
+    hours, minutes = divmod(remainder_hours, 60)
+    st.info(f"\nEstimated total job runtime: {int(days)} days,{int(hours)} hours and {int(minutes)} minutes")
 
     if total > 24 * 60:
         st.warning("Consider running in batches or increasing CPU resources to reduce walltime.")

@@ -9,19 +9,23 @@ This is a simple **Streamlit web app** that helps you estimate how long your `nf
 - Input sample count, avg. FASTQ file size, CPU and memory requested
 - Obtain a rough estimate (~15-20% error margin) for Runtime per sample, Total job runtime and Warnings for long runtimes (>24hs).
 
-# Requirements
+# Running the App online
+https://runtimechecker.streamlit.app/
+
+# Running the App locally
+## Requirements
 - Just have Python and Streamlit installed:
 ```bash
 pip install streamlit
 ```
-
-# Running the App
 1. Save the script to a file, e.g., `runtime_estimator.py`
 2. Run with:
 
 ```bash
 streamlit run runtime_estimator.py
 ```
+
+
 
 ## How to Use
 

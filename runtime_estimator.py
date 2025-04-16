@@ -44,8 +44,8 @@ if st.button("Estimate Runtime"):
 
     st.success(f"\nEstimated runtime per sample: {per_sample:.1f} minutes")
     total_minutes=total
-    days, reminder_hours=divmod(total_minutes, 60*24)
-    hours, minutes = divmod(remainder_hours, 60)
+    days, remainder=divmod(total_minutes, 60*24)
+    hours, minutes = divmod(remainder, 60)
     st.info(f"\nEstimated total job runtime: {int(days)} days,{int(hours)} hours and {int(minutes)} minutes")
 
     if total > 24 * 60:
